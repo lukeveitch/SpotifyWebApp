@@ -112,8 +112,4 @@ class SpotifyClient(object):
         
         return True, r.json()['audio_features']
 
-spotifyClient = SpotifyClient(client_id, client_secret)
-playlist_id= '73KvoZbKdQSNonmuvKrUII'
-print(spotifyClient.getPlaylistInfo(playlist_id))
-
 
