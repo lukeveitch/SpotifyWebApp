@@ -51,7 +51,7 @@ class SpotifyClient(object):
         data = r.json()
         now = datetime.datetime.now()
         access_token = data['access_token']
-        expires_in = data['expires_in'] # seconds
+        expires_in = data['expires_in'] #seconds
         expires = now + datetime.timedelta(seconds=expires_in)
         self.access_token = access_token
         self.access_token_expires = expires
@@ -111,3 +111,5 @@ class SpotifyClient(object):
             return False, []
         
         return True, r.json()['audio_features']
+
+
