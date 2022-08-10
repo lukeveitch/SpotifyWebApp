@@ -9,9 +9,6 @@ class ImageGenerator(object):
         self.path_to_script_dir = Path.cwd() / path_to_script_dir
         self.processing_script = processing_script
 
-
-
-
     def makeArt(self): # !!!!!!!!!! add a more meaningful name to the file that is generated
 
         jar_file_path = Path(self.path_to_script_dir / "processing-py.jar")
