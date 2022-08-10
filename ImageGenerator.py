@@ -1,17 +1,24 @@
 import os
 import glob
-
+from pathlib import Path
+    
 class ImageGenerator(object):
     path_to_script_dir = None
     
     def __init__(self, path_to_script_dir, processing_script):
-        self.path_to_script_dir = os.getcwd() + path_to_script_dir.removesuffix('\\').removesuffix('/')       
+        self.path_to_script_dir = Path.cwd() / path_to_script_dir
         self.processing_script = processing_script
 
-        
+
+
+
     def makeArt(self): # !!!!!!!!!! add a more meaningful name to the file that is generated
-        command = f'java -jar {self.path_to_script_dir}\\processing-py.jar {self.path_to_script_dir}\\{self.processing_script}\n'
-        save_image_path = f'{self.path_to_script_dir}\\Examples\\*'
+
+        jar_file_path = Path(self.path_to_script_dir / "processing-py.jar")
+        sketch_path = Path(self.path_to_script_dir / self.processing_script)
+
+        command = f'java -jar {jar_file_path} {sketch_path}'
+        save_image_path = f'{self.path_to_script_dir}/Examples/*'
         
         stream = os.popen(command)
         output = stream.read()
