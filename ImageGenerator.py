@@ -1,7 +1,6 @@
 import os
 import glob
 
-    
 class ImageGenerator(object):
     path_to_script_dir = None
     
@@ -9,25 +8,7 @@ class ImageGenerator(object):
         self.path_to_script_dir = os.getcwd() + path_to_script_dir.removesuffix('\\').removesuffix('/')       
         self.processing_script = processing_script
 
-<<<<<<< HEAD
-        print(self.path_to_script_dir)
         
-    def makeArt(self): # !!!!!!!!!! add a more meaningful name to the file that is generated
-
-        processing_cli_command = f'java -jar {self.path_to_script_dir}/processing-py.jar {self.path_to_script_dir}/{self.processing_script}'
-        print(processing_cli_command)
-        #run cli command
-        stream = os.popen(processing_cli_command)
-        output = stream.read()
-        #get most recent file
-        list_of_files = glob.glob(f'{self.path_to_script_dir}\\Examples\\*') 
-        latest_file = max(list_of_files, key=os.path.getctime)
-        return latest_file
-
-dir_path = "/PietMondrian/"
-script_name = "PietMondrian.pyde"
-imageGenerator = ImageGenerator(dir_path, script_name)
-=======
     def makeArt(self): # !!!!!!!!!! add a more meaningful name to the file that is generated
         command = f'java -jar {self.path_to_script_dir}\\processing-py.jar {self.path_to_script_dir}\\{self.processing_script}\n'
         save_image_path = f'{self.path_to_script_dir}\\Examples\\*'
@@ -38,4 +19,3 @@ imageGenerator = ImageGenerator(dir_path, script_name)
         list_of_files = glob.glob(save_image_path)
         latest_file = max(list_of_files, key=os.path.getctime)
         return latest_file
->>>>>>> dev
