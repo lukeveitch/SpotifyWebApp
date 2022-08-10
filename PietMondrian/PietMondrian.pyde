@@ -65,11 +65,8 @@ def setup():
             vertex(p)
         endShape(CLOSE)
     
-<<<<<<< HEAD
-    _=save("C:\\Users\\Lenovo\\Desktop\\SpotifyWebApp\\PietMondrian\\PietMondrian.pyde\\Examples\\" + str(int(random(10000))) + ".png")
-=======
+
     _=save("C:\\Users\\Lenovo\\Desktop\\SpotifyWebApp\\PietMondrian\\Examples\\" + str(int(random(10000))) + ".png")
->>>>>>> dev
     
     exit()
     
